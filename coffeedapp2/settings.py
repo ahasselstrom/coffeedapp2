@@ -13,6 +13,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -35,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core', 
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,16 +75,21 @@ WSGI_APPLICATION = 'coffeedapp2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+if ON_HEROKU == True:
+    # Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+else:
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -118,3 +126,19 @@ STATICFILES_DIRS = (
     )
 
 STATIC_ROOT = 'staticfiles'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAJHSNQ6DZ7YKHL22Q'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'onemonthpythoncoffeedapp2'
+'''
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_FORCE_HTTP_URL = True
+AWS_QUERYSTRING_AUTH = False
+AWS_SECRET_ACCESS_KEY = os.environ.get('f5SSZaT4xlfI+fq4xpRAwp+XdZ7Zqj9zao70mCFe')
+AWS_ACCESS_KEY_ID = os.environ.get('AKIAJHSNQ6DZ7YKHL22Q')
+
+AWS_STORAGE_BUCKET_NAME = 'onemonthpythoncoffeedapp2'
+'''
+
+

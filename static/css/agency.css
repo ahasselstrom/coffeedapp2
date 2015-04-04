@@ -39,6 +39,11 @@ a {
     color: #fed136;
 }
 
+.main-content{
+    padding-top: 120px;
+}
+
+
 a:hover,
 a:focus,
 a:active,
@@ -177,7 +182,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fed136;
+    color: #d4a432;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -192,8 +197,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #d4a432;
+    background-color: #d4a432;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -202,11 +207,11 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #fed136;
+    background-color: #d4a432;
 }
 
 .navbar-default .nav li a {
-    text-transform: uppercase;
+    text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
@@ -216,13 +221,13 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #fed136;
+    color: #d4a432;
 }
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #fed136;
+    background-color: #d4a432;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
@@ -233,9 +238,9 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 10px 0;
         border: 0;
-        background-color: transparent;
+        background-color: black;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -254,7 +259,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #000;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
@@ -264,7 +269,7 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #fec503;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
@@ -923,7 +928,7 @@ text-transform: none;
 
 .navbar-default .navbar-brand {
     font-family: "Lucida Console", Monaco, monospace;
-    color: #d4a432;
+    color: #fec503;
 }
 
 .pagination>li:first-child>a, .pagination>li:first-child>span {
@@ -977,7 +982,7 @@ header .intro-text .intro-lead-in {
     font-size: 40px;
     font-style: italic;
     line-height: 40px;
-    color: #d4a432;
+    color: #fec503;
 }
 
 header {
