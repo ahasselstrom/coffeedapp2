@@ -128,15 +128,15 @@ STATICFILES_DIRS = (
 STATIC_ROOT = 'staticfiles'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_ACCESS_KEY_ID = 'AKIAJHSNQ6DZ7YKHL22Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = 'onemonthpythoncoffeedapp2'
 '''
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_FORCE_HTTP_URL = True
 AWS_QUERYSTRING_AUTH = False
-AWS_SECRET_ACCESS_KEY = os.environ.get('f5SSZaT4xlfI+fq4xpRAwp+XdZ7Zqj9zao70mCFe')
-AWS_ACCESS_KEY_ID = os.environ.get('AKIAJHSNQ6DZ7YKHL22Q')
+AWS_SECRET_ACCESS_KEY = os.environ.get('')
+AWS_ACCESS_KEY_ID = os.environ.get('')
 
 AWS_STORAGE_BUCKET_NAME = 'onemonthpythoncoffeedapp2'
 '''
